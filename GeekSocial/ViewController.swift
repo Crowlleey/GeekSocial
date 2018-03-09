@@ -19,7 +19,12 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
 }
 
+class oi{
+    
+    func sum(_ a: Int, _ b: Int) -> Int {
+        return a + b
+    }
+    
+}
