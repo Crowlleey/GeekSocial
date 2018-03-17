@@ -35,11 +35,7 @@ class FeedViewController: UIViewController {
     }
     
     func needsLogin(){
-//        performSegue(withIdentifier: "toLogin", sender: nil)
-        
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "LoginView") as! LoginViewController
-        let navigationController = UINavigationController(rootViewController: vc)
-        self.present(navigationController, animated: true, completion: nil)
+        performSegue(withIdentifier: "toLogin", sender: nil)
     }
     
     @IBAction func unwindSegue(_ sender: UIStoryboardSegue) {
