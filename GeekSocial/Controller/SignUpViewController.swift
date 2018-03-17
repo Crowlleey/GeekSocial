@@ -14,8 +14,16 @@ class SignUpViewController: UIViewController {
         super.viewDidLoad()
     }
 
+    @IBAction func create(_ sender: Any) {
+        backToLogin()
+    }
     
+    @IBAction func cancel(_ sender: Any) {
+        backToLogin()
+        
+    }
     
-
-
+    func backToLogin(){
+        navigationController?.popViewController(animated: true)
+    }
 }

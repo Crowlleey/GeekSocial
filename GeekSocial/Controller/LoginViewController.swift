@@ -21,9 +21,13 @@ class LoginViewController: UIViewController {
         return true
     }
  
+    @IBAction func enter(_ sender: Any) {
+        performSegue(withIdentifier: "unwindToFeed", sender: self)
+    }
+    
     
     @IBAction func signUp(_ sender: Any) {
-        performSegue(withIdentifier: "toSignUp", sender: nil)
+        performSegue(withIdentifier: "toSignUp", sender: sender)
     }
     
     @IBAction func unwindSegue(_ sender: UIStoryboardSegue) {

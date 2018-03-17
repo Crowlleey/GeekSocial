@@ -9,9 +9,11 @@
 import Foundation
 
 class ServiceRequest{
-    
+    var change = true
     func login(completionHandler: @escaping(Bool)-> Void){
         
-        completionHandler( true)
+        completionHandler(change)
+        change = false
+        
     }
 }

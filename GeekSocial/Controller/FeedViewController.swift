@@ -22,6 +22,7 @@ class FeedViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         reques.login { (bul) in
+            print(bul)
             if bul == true{
                 self.needsLogin()
             }
@@ -33,6 +34,8 @@ class FeedViewController: UIViewController {
        
         
     }
+    
+    
     
     func needsLogin(){
         performSegue(withIdentifier: "toLogin", sender: nil)
