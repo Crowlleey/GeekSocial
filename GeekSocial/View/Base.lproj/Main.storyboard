@@ -46,7 +46,7 @@
                                     <color key="titleColor" red="0.95140844583511353" green="0.24754372239112854" blue="0.17273285984992981" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="RxB-ow-N8V" kind="show" id="v80-b5-44L"/>
+                                    <action selector="signUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="A25-sH-mNA"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qAA-8p-fnB">
@@ -58,9 +58,6 @@
                                     <color key="titleColor" red="0.93497627973556519" green="0.3314974308013916" blue="0.34713020920753479" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" red="0.83902472257614136" green="0.83867067098617554" blue="0.87174397706985474" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
-                                <connections>
-                                    <segue destination="ySq-aU-uuy" kind="unwind" unwindAction="unwindSegue:" id="djS-bM-laM"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -76,11 +73,15 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="lcq-gc-HQU"/>
+                    <connections>
+                        <segue destination="ySq-aU-uuy" kind="unwind" unwindAction="unwindSegue:" id="bNv-RX-4zE"/>
+                        <segue destination="RxB-ow-N8V" kind="showDetail" identifier="toSignUp" action="showViewController:sender:" id="Xpj-w3-Sja"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <exit id="ySq-aU-uuy" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3882" y="25"/>
+            <point key="canvasLocation" x="3671" y="26"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="x8S-CL-0CA">
@@ -99,7 +100,10 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="wgD-Pb-Ceb"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Create">
+                                    <color key="titleColor" red="0.97122436759999997" green="0.2510903478" blue="0.18562966589999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <segue destination="iYj-v0-Jj0" kind="unwind" unwindAction="unwindSegue:" id="Oa0-5w-fUk"/>
                                 </connections>
@@ -128,6 +132,17 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dwd-Qh-uwj">
+                                <rect key="frame" x="39" y="583" width="297" height="44"/>
+                                <color key="backgroundColor" red="0.97122436761856079" green="0.25109034776687622" blue="0.18562966585159302" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="aWR-og-gAF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" red="0.54917329549789429" green="0.86685013771057129" blue="0.91403502225875854" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -153,11 +168,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jky-BF-q9Y"/>
                     </view>
+                    <connections>
+                        <segue destination="iYj-v0-Jj0" kind="unwind" unwindAction="unwindSegue:" id="x1g-1p-ZdZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A6b-gI-AAp" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="iYj-v0-Jj0" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4876" y="28.817733990147783"/>
+            <point key="canvasLocation" x="4530" y="26"/>
         </scene>
         <!--Item 2-->
         <scene sceneID="PFL-Mq-IMo">
@@ -187,7 +205,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="Bpj-Pf-yye"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="show" id="06h-FV-tmz"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="toLogin" id="06h-FV-tmz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2xe-gw-2pK" userLabel="First Responder" sceneMemberID="firstResponder"/>

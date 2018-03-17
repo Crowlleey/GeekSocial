@@ -16,16 +16,20 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
-    
 
-   
     override var prefersStatusBarHidden: Bool {
         return true
     }
  
+    
+    @IBAction func signUp(_ sender: Any) {
+        performSegue(withIdentifier: "toSignUp", sender: nil)
+    }
+    
     @IBAction func unwindSegue(_ sender: UIStoryboardSegue) {
         
     }
+    
     
 }
 
