@@ -18,25 +18,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <imageView clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LoginBackGround" translatesAutoresizingMaskIntoConstraints="NO" id="HdW-8h-byh">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
                             <imageView clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="eoa-9B-bPb">
                                 <rect key="frame" x="52" y="226" width="271" height="215"/>
-                            </imageView>
-                            <imageView clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LoginBackGround" translatesAutoresizingMaskIntoConstraints="NO" id="HdW-8h-byh">
-                                <rect key="frame" x="0.0" y="-74" width="375" height="741"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="eoa-9B-bPb" secondAttribute="bottom" constant="226" id="Bta-iD-lBT"/>
-                            <constraint firstItem="HdW-8h-byh" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Ls8-uE-UuG"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eoa-9B-bPb" secondAttribute="trailing" constant="52" id="Zuw-wx-cXu"/>
-                            <constraint firstAttribute="bottom" secondItem="HdW-8h-byh" secondAttribute="bottom" id="ert-rO-7J4"/>
-                            <constraint firstItem="HdW-8h-byh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fG0-D3-nCl"/>
-                            <constraint firstItem="eoa-9B-bPb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="52" id="j91-SJ-SbT"/>
-                            <constraint firstItem="HdW-8h-byh" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" constant="-74" id="kuX-hT-I8t"/>
-                            <constraint firstItem="eoa-9B-bPb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="206" id="y8s-2M-fNN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="eoa-9B-bPb" secondAttribute="bottom" constant="226" id="6mI-rr-UzD"/>
+                            <constraint firstItem="HdW-8h-byh" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="B5Q-XP-2i6"/>
+                            <constraint firstItem="HdW-8h-byh" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="FzF-2m-2KP"/>
+                            <constraint firstItem="eoa-9B-bPb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="206" id="izM-dh-pIv"/>
+                            <constraint firstItem="HdW-8h-byh" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="lHf-Hy-LIV"/>
+                            <constraint firstItem="eoa-9B-bPb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="52" id="s7T-HE-WBZ"/>
+                            <constraint firstItem="HdW-8h-byh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="wex-He-mey"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eoa-9B-bPb" secondAttribute="trailing" constant="52" id="wqx-PU-lGj"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY" userLabel="sa"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <nil key="simulatedBottomBarMetrics"/>

@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		4B4735F2B17DFCAFCDEBB706 /* Pods_GeekSocial.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 956D8B8A3A76571B7D9F3597 /* Pods_GeekSocial.framework */; };
+		5E5309BC205D77AF00DAB980 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5309BB205D77AF00DAB980 /* SignUpViewController.swift */; };
+		5E5309BE205D84AC00DAB980 /* LoginRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5309BD205D84AC00DAB980 /* LoginRequests.swift */; };
+		5EB233ED205CD915003B93CF /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB233EC205CD915003B93CF /* FeedViewController.swift */; };
+		5EB233F0205CE0B3003B93CF /* ServiceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB233EF205CE0B3003B93CF /* ServiceRequest.swift */; };
 		5EBF7464205C5794000CD789 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBF7463205C5794000CD789 /* User.swift */; };
 		5EE61F212050D10B009E7730 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE61F202050D10B009E7730 /* AppDelegate.swift */; };
 		5EE61F232050D10B009E7730 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE61F222050D10B009E7730 /* LoginViewController.swift */; };
@@ -39,6 +43,10 @@
 /* Begin PBXFileReference section */
 		0D2E92B6B8A32E92CC5F8A0F /* Pods_GeekSocialUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GeekSocialUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		19308B70C55273599CBD7E3B /* Pods-GeekSocial.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeekSocial.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GeekSocial/Pods-GeekSocial.debug.xcconfig"; sourceTree = "<group>"; };
+		5E5309BB205D77AF00DAB980 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		5E5309BD205D84AC00DAB980 /* LoginRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequests.swift; sourceTree = "<group>"; };
+		5EB233EC205CD915003B93CF /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		5EB233EF205CE0B3003B93CF /* ServiceRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceRequest.swift; sourceTree = "<group>"; };
 		5EBF7463205C5794000CD789 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5EE61F1D2050D10B009E7730 /* GeekSocial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeekSocial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EE61F202050D10B009E7730 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -99,6 +107,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		5EB233EE205CE095003B93CF /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				5EB233EF205CE0B3003B93CF /* ServiceRequest.swift */,
+				5E5309BD205D84AC00DAB980 /* LoginRequests.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
 		5EBF745D205C56E3000CD789 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -120,7 +137,9 @@
 		5EBF745F205C56F6000CD789 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				5EB233EC205CD915003B93CF /* FeedViewController.swift */,
 				5EE61F222050D10B009E7730 /* LoginViewController.swift */,
+				5E5309BB205D77AF00DAB980 /* SignUpViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -170,6 +189,7 @@
 				5EBF745F205C56F6000CD789 /* Controller */,
 				5EBF745E205C56F0000CD789 /* View */,
 				5EBF745D205C56E3000CD789 /* Model */,
+				5EB233EE205CE095003B93CF /* Request */,
 				5EBF7461205C5720000CD789 /* Persistence */,
 				5EE61F2F2050D10B009E7730 /* Info.plist */,
 			);
@@ -397,9 +417,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				5EBF7464205C5794000CD789 /* User.swift in Sources */,
+				5E5309BC205D77AF00DAB980 /* SignUpViewController.swift in Sources */,
 				5EE61F292050D10B009E7730 /* GeekSocial.xcdatamodeld in Sources */,
+				5E5309BE205D84AC00DAB980 /* LoginRequests.swift in Sources */,
+				5EB233ED205CD915003B93CF /* FeedViewController.swift in Sources */,
 				5EE61F232050D10B009E7730 /* LoginViewController.swift in Sources */,
 				5EE61F212050D10B009E7730 /* AppDelegate.swift in Sources */,
+				5EB233F0205CE0B3003B93CF /* ServiceRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

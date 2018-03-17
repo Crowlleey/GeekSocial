@@ -7,16 +7,25 @@
 //
 
 import UIKit
-
+import Foundation
 class LoginViewController: UIViewController {
 
+   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
+
+   
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+ 
+    @IBAction func unwindSegue(_ sender: UIStoryboardSegue) {
         
     }
     
-    override var prefersStatusBarHidden: Bool{
-        return true
-    }
 }
 
