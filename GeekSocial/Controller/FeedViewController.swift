@@ -14,6 +14,7 @@ class FeedViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -21,12 +22,8 @@ class FeedViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        reques.login { (bul) in
-            print(bul)
-            if bul == true{
-                self.needsLogin()
-            }
-        }
+        self.needsLogin()
+        
     }
     
     @IBAction func press(_ sender: Any) {
@@ -35,10 +32,8 @@ class FeedViewController: UIViewController {
         
     }
     
-    
-    
     func needsLogin(){
-        performSegue(withIdentifier: "toLogin", sender: nil)
+        performSegue(withIdentifier: SegueTo.Login, sender: nil)
     }
     
     @IBAction func unwindSegue(_ sender: UIStoryboardSegue) {

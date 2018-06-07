@@ -12,18 +12,28 @@ class SignUpViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tap)
     }
 
-    @IBAction func create(_ sender: Any) {
-        backToLogin()
+    @objc func dismissKeyboard(){
+        view.endEditing(true)
     }
     
-    @IBAction func cancel(_ sender: Any) {
-        backToLogin()
+    @IBAction func create(_ sender: Any) {
         
     }
     
+    @IBAction func cancel(_ sender: Any) {
+      print("chaa")
+  
+        backToLogin()
+    }
+    
     func backToLogin(){
-        navigationController?.popViewController(animated: true)
+        self.navigationController?.popViewController(animated: true)
     }
 }
+
+

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iQv-YD-Ibh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iQv-YD-Ibh">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="YBt-ub-k66">
-                                <rect key="frame" x="67" y="107" width="241" height="215"/>
+                                <rect key="frame" x="67" y="63" width="241" height="215"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="nick" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gF1-BL-AkJ">
                                 <rect key="frame" x="39" y="318" width="297" height="30"/>
@@ -76,8 +76,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="lcq-gc-HQU"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
-                        <segue destination="RxB-ow-N8V" kind="showDetail" identifier="toSignUp" action="showViewController:sender:" id="Xpj-w3-Sja"/>
+                        <outlet property="nickTextField" destination="gF1-BL-AkJ" id="sMO-nG-96C"/>
+                        <outlet property="passwordTextField" destination="Rg8-Vt-JC1" id="N6A-43-bHL"/>
+                        <segue destination="RxB-ow-N8V" kind="show" identifier="toSignUp" id="Xpj-w3-Sja"/>
                         <segue destination="ySq-aU-uuy" kind="unwind" identifier="unwindToFeed" unwindAction="unwindSegue:" id="CPP-N5-KoZ"/>
                     </connections>
                 </viewController>
@@ -184,7 +187,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A6b-gI-AAp" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="iYj-v0-Jj0" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="5143" y="-505"/>
+            <point key="canvasLocation" x="5310" y="-505"/>
         </scene>
         <!--Item 2-->
         <scene sceneID="PFL-Mq-IMo">

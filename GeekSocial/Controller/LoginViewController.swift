@@ -8,32 +8,43 @@
 
 import UIKit
 import Foundation
+
 class LoginViewController: UIViewController {
 
-   
+    var user: User!
+    
+    @IBOutlet weak var nickTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //Gesture to dismiss keyboard
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tap)
         self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
 
-    override var prefersStatusBarHidden: Bool {
-        return true
-    }
- 
     @IBAction func enter(_ sender: Any) {
-        performSegue(withIdentifier: "unwindToFeed", sender: self)
+        let alertd = UIAlertController(title: "Senha errada", message: "Voce colocou a senha errada", preferredStyle: .alert)
+        let OKAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertd.addAction(OKAction)
+        self.present(alertd, animated: true, completion: nil)
     }
-    
     
     @IBAction func signUp(_ sender: Any) {
-        performSegue(withIdentifier: "toSignUp", sender: sender)
+        performSegue(withIdentifier: Segue.toSignUp.rawValue, sender: sender)
     }
     
     @IBAction func unwindSegue(_ sender: UIStoryboardSegue) {
         
     }
     
+    @objc func dismissKeyboard(){
+        view.endEditing(true)
+    }
     
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
 }
 

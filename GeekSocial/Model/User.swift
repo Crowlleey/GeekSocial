@@ -7,3 +7,23 @@
 //
 
 import Foundation
+
+protocol Certifiable {
+    var login: String {get}
+    var password: String {get}
+}
+
+class User: Certifiable {
+    var login: String{
+        return "sdsa"
+    }
+    
+    var password: String = ""
+    
+    
+    
+    
+}
+
+
+

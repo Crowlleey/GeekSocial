@@ -8,12 +8,27 @@
 
 import Foundation
 
-class ServiceRequest{
-    var change = true
-    func login(completionHandler: @escaping(Bool)-> Void){
-        
-        completionHandler(change)
-        change = false
+enum RequestResponse <T>{
+    case sucess(T)
+    case error(Error)
+}
+
+protocol ServiceRequestProtocol {
+    func login(_ nick: String,_ password: String, completion: @escaping (RequestResponse<User>) -> Void)
+    func createAcc(_ user: User, completion: @escaping(RequestResponse<User>) -> Void)
+}
+
+class ServiceRequest: ServiceRequestProtocol{
+    
+    static let sharedInstance = ServiceRequest()
+
+    
+    func login(_ nick: String,_ password: String, completion: @escaping (RequestResponse<User>) -> Void){
         
     }
+    
+    func createAcc(_ user: User, completion: @escaping (RequestResponse<User>) -> Void) {
+            }
+    
+
 }
