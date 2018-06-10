@@ -9,59 +9,97 @@
 import Foundation
 
 protocol Certifiable {
+    var idUser: Int{get}
     var name: String{get set}
-    var email: String {get set}
+    var emaile: String {get set}
     var password: String {get set}
 }
 
-class User: Certifiable {
-    
-    private var _name: String!
-    private var _email: String!
-    private var _password: String!
-    private var _date: Date!
-    
+class User: Certifiable, Codable {
+
+    private var idPessoa: Int?
+    private var nome: String!
+    private var email: String!
+    private var senha: String!
+    private var dataNasc: Date!
+//    private var dataNasc:
     
     init(_ name: String, _ email: String, _ password: String, _ date: Date) {
-        self._name = name
-        self._email = email
-        self._password = password
-        self._date = date
+ 
+        self.nome = name
+        self.email = email
+        self.senha = password
+        self.dataNasc = date
+    }
+    
+    init(_ id: Int,_ name: String, _ email: String, _ password: String, _ date: Date) {
+        
+        self.idPessoa = id
+        self.nome = name
+        self.email = email
+        self.senha = password
+        self.dataNasc = date
+    }
+    
+    init(_ id: Int,_ name: String, _ email: String, _ password: String, _ date: String) {
+        
+        self.idPessoa = id
+        self.nome = name
+        self.email = email
+        self.senha = password
+        self.dataNasc = date.toDate()
+    }
+    
+    func isEmpty() -> Bool{
+        var check = false
+        
+        if((idPessoa == nil) && (nome == nil) && (email == nil) && (senha == nil) && (dataNasc == nil)){
+            check = true
+        }
+        
+        return check
+    }
+    
+    var idUser: Int{
+        get{
+            guard let idDone = idPessoa else { return 0}
+            return idDone
+        }
     }
     
     var name: String{
         get{
-            return _name
+            return nome
         }
         set{
-            _name = newValue
+            nome = newValue
         }
     }
     
-    var email: String {
+    var emaile: String {
         get{
-            return _email
+            return email
         }
         set{
-            _email = newValue
+            email = newValue
         }
     }
     
     var password: String {
         get{
-            return _password
+            return senha
         }
         set{
-            _password = newValue
+            senha = newValue
         }
     }
     
     var date: Date{
         get{
-            return _date
+            return dataNasc
         }
         set{
-            _date = newValue
+            dataNasc = newValue
         }
     }
     

@@ -9,7 +9,7 @@
 import UIKit
 
 class FeedViewController: UIViewController {
-
+    var i = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +21,14 @@ class FeedViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        self.needsLogin()
+        
+        if(i == 0 ){
+            i = i+1
+            self.needsLogin()
+            
+        }else{
+            
+        }
         
     }
     

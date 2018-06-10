@@ -19,6 +19,10 @@ enum CheckRegisterError: Error{
 
 class UserBO{
     
+    init(){
+        
+    }
+    
     func check(_ name: String?, _ email: String?, birthDate: Date?,_ password: String?,_ confirmPassword: String?) throws{
         
         if let name = name, let email = email, let birthDate = birthDate, let pass = password{
@@ -47,7 +51,7 @@ class UserBO{
         }
     }
     
-    func save(name: String, _ email: String, birthDate: Date,_ password: String, completion: @escaping (RequestResponse<Bool>) -> Void){
+    func registerUser(name: String, _ email: String, birthDate: Date,_ password: String, completion: @escaping (RequestResponse<Bool>) -> Void){
         let user = User(name, email, password, birthDate)
         
         ServiceRequest.sharedInstance.createAcc(user) { response in
@@ -57,6 +61,25 @@ class UserBO{
                 completion(RequestResponse.sucess(boolean))
             case .error(let err):
                 completion(RequestResponse.error(err))
+            case .fail:
+                completion(RequestResponse.fail)
+            }
+        }
+    }
+    
+    func saveUser(user: User,completion: @escaping (Bool) -> Void){
+        
+        let obj: UserCD = CDManager.managerInstance().Object()
+        obj.idU = Int32(user.idUser)
+        obj.nome = user.name
+        obj.email = user.emaile
+        obj.birthdate = user.date
+        
+        CDManager.managerInstance().saveThis(obj) { err in
+            if err != nil{
+                completion(false)
+            }else{
+                completion(true)
             }
         }
     

@@ -54,7 +54,7 @@ class SignUpViewController: UIViewController {
             try userBO.check(self.tfNick.text, self.tfemail.text,
                                     birthDate: self.tfBirthdate.text?.toDate(), self.tfPassword.text, self.tfConfirmPassword.text)
             
-            userBO.save(name: self.tfNick.text!, self.tfemail.text!, birthDate: self.tfBirthdate.text!.toDate(), self.tfPassword.text!, completion: { response in
+            userBO.registerUser(name: self.tfNick.text!, self.tfemail.text!, birthDate: self.tfBirthdate.text!.toDate(), self.tfPassword.text!, completion: { response in
                 switch (response){
                     
                 case .sucess(_):
@@ -62,6 +62,10 @@ class SignUpViewController: UIViewController {
                     break
                     
                 case .error(_):
+                    self.createAllert(with: (error: "ERRO", describe: "usuário não pode ser criado"), desmiss: false)
+                    break
+                case .fail:
+                    self.createAllert(with: (error: "ERRO", describe: "usuário não pode ser criado"), desmiss: false)
                     break
                 }
             })
@@ -75,6 +79,7 @@ class SignUpViewController: UIViewController {
         backToLogin()
     }
 }
+
 
 
 

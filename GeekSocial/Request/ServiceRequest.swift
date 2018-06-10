@@ -12,6 +12,7 @@ import Alamofire
 enum RequestResponse <T>{
     case sucess(T)
     case error(Error)
+    case fail
 }
 
 protocol ServiceRequestProtocol {
@@ -57,20 +58,34 @@ class ServiceRequest: ServiceRequestProtocol{
             case .success( _):
                 if let _: Any = response.result.value{
                     if let _: Int = response.response?.statusCode {
-                        //Got the status code and data. Do your data pursing task from here.
-                        let backToString = String(data: response.data!, encoding: String.Encoding.utf8)
-                        print(backToString!, "nnn")
+                        
+                        if let data = response.data{
+                            do{
+                                print("com data")
+                                let decoder = JSONDecoder()
+                                decoder.dateDecodingStrategy = .formatted(DateFormatter.iso8601Full)
+                                let users = try decoder.decode([User].self, from: data)
+                                
+                                if(users.count != 0){
+                                    completion(RequestResponse.sucess(users[0]))
+                                }else{
+                                    completion(RequestResponse.fail)
+                                }
+                            }catch{
+                                completion(RequestResponse.error(error))
+                            }
+                        }else{
+                            completion(RequestResponse.fail)
+                        }
                     }
                 }else{
-                     print("3")
-                    //Response data is not valid, So do some other calculations here
+                 completion(RequestResponse.fail)
                 }
             case .failure(let fail):
-                 print("4")
-                 print(fail)
+                 completion(RequestResponse.error(fail))
                 break
-                //Api request process failed. Check for errors here.
-                }
+             
+            }
         }
     }
 
@@ -82,10 +97,10 @@ class ServiceRequest: ServiceRequestProtocol{
         let date = user.date.toString()
         print(date)
         
-        let params = ["nome": user.name, "email": user.email, "pass": user.password, "data": date]
+        let params = ["nome": user.name, "email": user.emaile, "pass": user.password, "data": date]
         
         Alamofire.request(urlToSend!, method: .post, parameters: params, encoding: URLEncoding(), headers: headers).response { response in
-            
+    
             if (response.error != nil){
                 completion(RequestResponse.error(response.error!))
             }else{
@@ -95,12 +110,14 @@ class ServiceRequest: ServiceRequestProtocol{
     }
 }
 
-extension Date{
-    
-    func shortDate() -> String{
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd/MM/yyyy"
-        return dateFormatter.string(from: self)
-    }
-    
+extension DateFormatter {
+    static let iso8601Full: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yyyy"
+        formatter.calendar = Calendar(identifier: .iso8601)
+        formatter.timeZone = TimeZone(secondsFromGMT: 0)
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        return formatter
+    }()
 }
+
