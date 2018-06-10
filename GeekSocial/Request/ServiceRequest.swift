@@ -20,8 +20,6 @@ protocol ServiceRequestProtocol {
 }
 
 class ServiceRequest: ServiceRequestProtocol{
-  
-    
     
     private var localHost: String! // = "192.168.15.18:8080"
     private var urlServer: String! //= "http://\(self.localHost)/GeekSocial/ws/"
@@ -41,7 +39,6 @@ class ServiceRequest: ServiceRequestProtocol{
         self.headers = ["application/x-www-form-urlencoded": "Content-Type"]
         
     }
-    
     
     func login(_ nick: String,_ password: String, completion: @escaping (RequestResponse<User>) -> Void){
         
@@ -75,7 +72,6 @@ class ServiceRequest: ServiceRequestProtocol{
                 //Api request process failed. Check for errors here.
                 }
         }
-        
     }
 
     func createAcc(_ user: User, completion: @escaping (RequestResponse<Bool>) -> Void) {

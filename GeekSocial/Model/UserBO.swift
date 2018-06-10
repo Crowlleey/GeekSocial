@@ -19,7 +19,6 @@ enum CheckRegisterError: Error{
 
 class UserBO{
     
-    
     func check(_ name: String?, _ email: String?, birthDate: Date?,_ password: String?,_ confirmPassword: String?) throws{
         
         if let name = name, let email = email, let birthDate = birthDate, let pass = password{
