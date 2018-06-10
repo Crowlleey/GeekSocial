@@ -48,13 +48,19 @@ class UserBO{
         }
     }
     
-    func save(name: String, _ email: String, birthDate: Date,_ password: String){
+    func save(name: String, _ email: String, birthDate: Date,_ password: String, completion: @escaping (RequestResponse<Bool>) -> Void){
         let user = User(name, email, password, birthDate)
         
         ServiceRequest.sharedInstance.createAcc(user) { response in
-            
+            switch (response){
+                
+            case .sucess(let boolean):
+                completion(RequestResponse.sucess(boolean))
+            case .error(let err):
+                completion(RequestResponse.error(err))
+            }
         }
-        
+    
     }
     
     func errorDescriptor(_ errorToDescribe: CheckRegisterError) -> (error: String, describe: String){

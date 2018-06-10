@@ -16,10 +16,12 @@ enum RequestResponse <T>{
 
 protocol ServiceRequestProtocol {
     func login(_ nick: String,_ password: String, completion: @escaping (RequestResponse<User>) -> Void)
-    func createAcc(_ user: User, completion: @escaping(RequestResponse<User>) -> Void)
+    func createAcc(_ user: User, completion: @escaping(RequestResponse<Bool>) -> Void)
 }
 
 class ServiceRequest: ServiceRequestProtocol{
+  
+    
     
     private var localHost: String! // = "192.168.15.18:8080"
     private var urlServer: String! //= "http://\(self.localHost)/GeekSocial/ws/"
@@ -75,8 +77,8 @@ class ServiceRequest: ServiceRequestProtocol{
         }
         
     }
-  
-    func createAcc(_ user: User, completion: @escaping (RequestResponse<User>) -> Void) {
+
+    func createAcc(_ user: User, completion: @escaping (RequestResponse<Bool>) -> Void) {
         
         let local = "LoginRest/cadastrar"
         let toSend = urlServer + local
@@ -87,10 +89,12 @@ class ServiceRequest: ServiceRequestProtocol{
         let params = ["nome": user.name, "email": user.email, "pass": user.password, "data": date]
         
         Alamofire.request(urlToSend!, method: .post, parameters: params, encoding: URLEncoding(), headers: headers).response { response in
-            let resp = response
             
-            print(response.error)
-            
+            if (response.error != nil){
+                completion(RequestResponse.error(response.error!))
+            }else{
+                completion(RequestResponse.sucess(true))
+            }
         }
     }
 }
