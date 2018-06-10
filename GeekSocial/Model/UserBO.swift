@@ -82,7 +82,6 @@ class UserBO{
                 completion(true)
             }
         }
-    
     }
     
     func errorDescriptor(_ errorToDescribe: CheckRegisterError) -> (error: String, describe: String){
@@ -110,7 +109,6 @@ class UserBO{
             error = "Confirmação Invalida"
             describe = "as senhas não conferem"
         }
-        
         return (error, describe)
     }
 }

@@ -76,9 +76,6 @@ class UserTest:XCTestCase{
         userA.date = "10/01/1992".toDate()
         XCTAssertTrue(userA.date == "10/01/1992".toDate())
         XCTAssertFalse(userA.date == "10/01/1991".toDate())
-        
-        
-        
     }
     
 }

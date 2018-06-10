@@ -11,6 +11,7 @@
 		5E07BF9B20CD67D80008DE33 /* CDManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E07BF9A20CD67D80008DE33 /* CDManager.swift */; };
 		5E07BF9D20CD731B0008DE33 /* LoginViewController .swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E07BF9C20CD731B0008DE33 /* LoginViewController .swift */; };
 		5E07BFA120CDA89C0008DE33 /* UserTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E07BFA020CDA89C0008DE33 /* UserTest.swift */; };
+		5E07BFA320CDBE550008DE33 /* UserBOTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E07BFA220CDBE550008DE33 /* UserBOTest.swift */; };
 		5E5309BC205D77AF00DAB980 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5309BB205D77AF00DAB980 /* SignUpViewController.swift */; };
 		5E5309C0205DAA7900DAB980 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5309BF205DAA7900DAB980 /* Enums.swift */; };
 		5E6BFED720CCD2AF00312964 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6BFED620CCD2AF00312964 /* DateExtension.swift */; };
@@ -50,6 +51,7 @@
 		5E07BF9A20CD67D80008DE33 /* CDManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDManager.swift; sourceTree = "<group>"; };
 		5E07BF9C20CD731B0008DE33 /* LoginViewController .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LoginViewController .swift"; sourceTree = "<group>"; };
 		5E07BFA020CDA89C0008DE33 /* UserTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTest.swift; sourceTree = "<group>"; };
+		5E07BFA220CDBE550008DE33 /* UserBOTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBOTest.swift; sourceTree = "<group>"; };
 		5E5309BB205D77AF00DAB980 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		5E5309BF205DAA7900DAB980 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		5E6BFED620CCD2AF00312964 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 				5EE61F382050D10C009E7730 /* GeekSocialTests.swift */,
 				5EE61F3A2050D10C009E7730 /* Info.plist */,
 				5E07BFA020CDA89C0008DE33 /* UserTest.swift */,
+				5E07BFA220CDBE550008DE33 /* UserBOTest.swift */,
 			);
 			path = GeekSocialTests;
 			sourceTree = "<group>";
@@ -446,6 +449,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E07BFA320CDBE550008DE33 /* UserBOTest.swift in Sources */,
 				5E07BFA120CDA89C0008DE33 /* UserTest.swift in Sources */,
 				5EE61F392050D10C009E7730 /* GeekSocialTests.swift in Sources */,
 			);
