@@ -25,6 +25,23 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func enter(_ sender: Any) {
+        
+        let login = nickTextField.text
+        let pass = passwordTextField.text
+        
+        ServiceRequest.sharedInstance.login(login!, pass!) { requestResponse in
+            switch requestResponse{
+                case .sucess(let opa):
+                    print(opa)
+                    break
+                
+                case .error(let err):
+                    print(err)
+                    break
+            }
+        }
+        
+        
         let alertd = UIAlertController(title: "Senha errada", message: "Voce colocou a senha errada", preferredStyle: .alert)
         let OKAction = UIAlertAction(title: "OK", style: .default, handler: nil)
         alertd.addAction(OKAction)

@@ -10,7 +10,6 @@ import UIKit
 
 class FeedViewController: UIViewController {
 
-    var reques = ServiceRequest()
     
     override func viewDidLoad() {
         super.viewDidLoad()
