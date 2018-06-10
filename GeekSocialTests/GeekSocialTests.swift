@@ -11,24 +11,22 @@ import XCTest
 
 class GeekSocialTests: XCTestCase {
     
-    var c: oi!
-    
+
     override func setUp() {
         super.setUp()
-        c = oi()
+  
     }
     
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
-        c = nil
+
         
     }
     
 
     func testExample() {
-        var i = c.sum(2, 2)
-            XCTAssertTrue( i == 4)
+        
     }
     
     func testPerformanceExample() {

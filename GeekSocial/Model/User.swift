@@ -22,7 +22,6 @@ class User: Certifiable, Codable {
     private var email: String!
     private var senha: String!
     private var dataNasc: Date!
-//    private var dataNasc:
     
     init(_ name: String, _ email: String, _ password: String, _ date: Date) {
  
@@ -41,13 +40,8 @@ class User: Certifiable, Codable {
         self.dataNasc = date
     }
     
-    init(_ id: Int,_ name: String, _ email: String, _ password: String, _ date: String) {
+    init(){
         
-        self.idPessoa = id
-        self.nome = name
-        self.email = email
-        self.senha = password
-        self.dataNasc = date.toDate()
     }
     
     func isEmpty() -> Bool{
@@ -104,6 +98,3 @@ class User: Certifiable, Codable {
     }
     
 }
-
-
-
