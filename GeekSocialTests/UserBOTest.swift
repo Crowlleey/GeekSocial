@@ -43,6 +43,11 @@ class UserBOTest:XCTestCase{
         XCTAssertThrowsError(try userBO.check("George", " george@gmail", birthDate: "12/03/1997".toDate(), "123123", nil))
     }
     
+    func testPassAll(){
+        XCTAssertNoThrow(try userBO.check("George", " george@gmail", birthDate: "12/03/1997".toDate(), "123123", "123123"))
+    }
+    
+    
     // Test errorDescriptor
     func testErrorDescribName(){
         let invalidName = userBO.errorDescriptor(CheckRegisterError.invalidName)

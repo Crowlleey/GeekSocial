@@ -34,8 +34,8 @@ class ServiceRequest: ServiceRequestProtocol{
         let http = "http://"
         let server = "/GeekSocial/ws/"
         
-        self.localHost = "192.168.15.18:8080"
-        self.urlServer = http + self.localHost + server 
+        self.localHost = "192.168.25.5:8080"
+        self.urlServer = http + self.localHost + server
         self.post = "POST"
         self.headers = ["application/x-www-form-urlencoded": "Content-Type"]
         
