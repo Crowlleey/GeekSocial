@@ -25,17 +25,11 @@ class FeedViewController: UIViewController {
         if(i == 0 ){
             i = i+1
             self.needsLogin()
-            
-        }else{
-            
         }
-        
     }
     
     @IBAction func press(_ sender: Any) {
       
-       
-        
     }
     
     func needsLogin(){

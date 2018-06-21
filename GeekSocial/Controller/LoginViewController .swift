@@ -40,7 +40,6 @@ class LoginViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
-    
     @IBAction func enter(_ sender: Any) {
         
         let login = nickTextField.text
@@ -51,7 +50,6 @@ class LoginViewController: UIViewController {
                 case .sucess(let user):
                     self.userBO.saveUser(user: user , completion: { sucess in
                         switch sucess{
-                            
                         case true:
                             self.createAllert(with: (title:"Logado" , describe: ""), dismiss: true)
                             break
